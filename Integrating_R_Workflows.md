@@ -25,7 +25,7 @@ GUI sessions are great for interactive work, but scaling happens best at the com
 srun --pty --x11=first -p interact --mem 2000 -n 1 -N 1 -t 0-06:00 /bin/bash
 source new-modules.sh
 module load R_packages
-R &
+R
 ```
 
 Note: loading R_packages automatically loads R.
@@ -48,13 +48,13 @@ R CMD BATCH --no-save --no-restore '--args a=1 b=c(2,5,6)' test.R test.out
 ```
 You can also put your R commands in a script file and execute the script file directly.
 
-Example SLURM and R scripts can be found in the 'simple' folder within the tar archive at the URL listed above.
+Example SLURM and R scripts can be found in the `simple` folder within the tar archive at the URL listed above.
 
 More information at https://rc.fas.harvard.edu/resources/documentation/software/r/#Running_R_Batch_Jobs_on_Odyssey
 
 
 ### Submit an R command script to SLURM
-Running an R job on the cluster, in the background, is almost no different that running an R script in an interactive session. The only change would be to include SLURM directives at the start of your script, prefixed by the `#SBATCH` keyword. Since these will appear as comments to `bash`, your interactive script and SLURM script can be one and the same. Again, see the scripts in the `simple` folder of the tar archive.0
+Running an R job on the cluster, in the background, is almost no different that running an R script in an interactive session. The only change would be to include SLURM directives at the start of your script, prefixed by the `#SBATCH` keyword. Since these will appear as comments to `bash`, your interactive script and SLURM script can be one and the same. Again, see the scripts in the `simple` folder of the tar archive.
 
 ### Scaling jobs: Submitting a directory of files
 As you start to scale your work, one example usage pattern is to have your R code process a bunch of files in one directory. Instead of doing this serially (one after another), you can *pleasantly parallelize* this approach, submitting one job per file. To do so, you'd need to submit the SLURM script for each file, which you can do with a `bash` for loop:
