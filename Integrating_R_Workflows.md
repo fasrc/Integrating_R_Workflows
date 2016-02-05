@@ -2,6 +2,8 @@
 
 This document will go over the usage patterns for executing R code on Odyssey. Example files can be obtained from [http://fasrc.github.io/2015-07-22_SWC-R/class_data/swc_r_integration.tgz](http://fasrc.github.io/2015-07-22_SWC-R/class_data/swc_r_integration.tgz).
 
+**If you need to install or update any R packages for your own work, please see our instructions for [Running R on Odyssey](https://rc.fas.harvard.edu/resources/documentation/software/r/)**
+
 ### Run RStudio using RC's NoMachine
 It is possible to use GUI applications on Odyssey by making a remote desktop session with our GUI login server NoMachineX. Please see http://fasrc.us/nxsession for setup and instructions.
 
@@ -12,6 +14,7 @@ The X11 protocol is rather network-intensive, so doing X11 sessions require pati
 srun --pty --x11=first -p interact --mem 2000 -n 1 -N 1 -t 0-06:00 /bin/bash
 source new-modules.sh
 module load rstudio
+module load R_packages
 rstudio &
 ```
 
