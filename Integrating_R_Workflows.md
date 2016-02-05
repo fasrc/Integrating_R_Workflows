@@ -5,7 +5,7 @@ This document will go over the usage patterns for executing R code on Odyssey. E
 **If you need to install or update any R packages for your own work, please see our instructions for [Running R on Odyssey](https://rc.fas.harvard.edu/resources/documentation/software/r/)**
 
 ### Run RStudio using RC's NoMachine
-It is possible to use GUI applications on Odyssey by making a remote desktop session with our GUI login server NoMachineX. Please see http://fasrc.us/nxsession for setup and instructions.
+It is possible to use GUI applications on Odyssey by making a remote desktop session with our GUI login server NoMachineX. Please see http://fasrc.us/nxsession for setup and instructions, and enter the commands found in the next section to get your interactive session and RStudio running on via a compute node on the NX machine.
 
 ### Run RStudio by getting an X11 ssh login session
 The X11 protocol is rather network-intensive, so doing X11 sessions require patience, and we highly recommend using a wired ethernet connection. But, you can do so following the instructions at https://rc.fas.harvard.edu/resources/access-and-login/#Setup_X11_forwarding_for_lightweight_graphical_applications. Once you have your GUI session, get an interactive session on a compute node, load RStudio, and execute it:
